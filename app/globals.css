@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base theme configuration */
+@layer base {
+  :root {
+    --bg-navy-dark: #0a1128;
+    --bg-navy-surface: #0f1b3c;
+    --bg-navy-subtle: #14234e;
+    --border-navy: #1e3a6b;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent-blue: #2563eb;
+    --accent-light: #38bdf8;
+  }
+
+  body {
+    background-color: #0a1128;
+    color: #f8fafc;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  /* Ensure images & media are responsive */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  html {
+    font-size: 14px;
+    scroll-behavior: smooth;
+    background-color: #0a1128;
+  }
+  
+  @screen sm {
+    html {
+      font-size: 16px;
+    }
+  }
+
+  /* Form elements theme styling */
+  input, select, textarea {
+    background-color: #14234e !important;
+    color: #f8fafc !important;
+    border-color: #1e3a6b !important;
+  }
+
+  input::placeholder, textarea::placeholder {
+    color: #94a3b8 !important;
+  }
+
+  input:focus, select:focus, textarea:focus {
+    border-color: #38bdf8 !important;
+    box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.25) !important;
+  }
+}
+
+/* Custom responsive utilities */
+@layer utilities {
+  /* Responsive text sizes */
+  .text-responsive-xs { @apply text-xs sm:text-sm; }
+  .text-responsive-sm { @apply text-sm sm:text-base; }
+  .text-responsive-base { @apply text-base sm:text-lg; }
+  .text-responsive-lg { @apply text-lg sm:text-xl; }
+  .text-responsive-xl { @apply text-xl sm:text-2xl; }
+  .text-responsive-2xl { @apply text-2xl sm:text-3xl; }
+  .text-responsive-3xl { @apply text-3xl sm:text-4xl; }
+  .text-responsive-4xl { @apply text-4xl sm:text-5xl; }
+  
+  /* Responsive spacing */
+  .p-responsive { @apply p-4 sm:p-6 lg:p-8; }
+  .px-responsive { @apply px-4 sm:px-6 lg:px-8; }
+  .py-responsive { @apply py-4 sm:py-6 lg:py-8; }
+  .m-responsive { @apply m-4 sm:m-6 lg:m-8; }
+  .mx-responsive { @apply mx-4 sm:mx-6 lg:mx-8; }
+  .my-responsive { @apply my-4 sm:my-6 lg:my-8; }
+  
+  /* Responsive gaps */
+  .gap-responsive { @apply gap-4 sm:gap-6 lg:gap-8; }
+  .gap-responsive-sm { @apply gap-2 sm:gap-3 lg:gap-4; }
+  
+  /* Container utilities */
+  .container-responsive { 
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; 
+  }
+  
+  /* Button responsive */
+  .btn-responsive {
+    @apply px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base;
+  }
+  
+  /* Card responsive */
+  .card-responsive {
+    @apply p-4 sm:p-6 lg:p-8 rounded-lg sm:rounded-xl lg:rounded-2xl;
+  }
+
+  /* Global theme consistency classes */
+  .bg-white {
+    background-color: #0f1b3c !important;
+  }
+
+  .bg-gray-50 {
+    background-color: #14234e !important;
+  }
+
+  .border-gray-100, .border-gray-200 {
+    border-color: #1e3a6b !important;
+  }
+
+  .text-gray-500, .text-gray-600, .text-gray-700 {
+    color: #cbd5e1 !important;
+  }
+
+  .text-medical-dark {
+    color: #f8fafc !important;
+  }
+}
+
+/* Focus styles for accessibility */
+@layer utilities {
+  .focus-accessible:focus {
+    @apply ring-2 ring-medical-primary ring-offset-2 ring-offset-[#0a1128] outline-none;
+  }
+}
